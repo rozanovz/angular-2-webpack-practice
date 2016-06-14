@@ -1,0 +1,27 @@
+<main>
+	<h1>My First Attribute Directive</h1>
+	<h4>Pick a highlight color</h4>
+	<div>
+		<label *ngFor="let col of colors">
+			<input type="radio" name="colors" (click)="color=col.type">{{col.name}}
+		</label>
+	</div>
+
+	<div>
+		
+		<input #box (keyup)="0" [myHighlight]="color">
+		<p >{{box.value}}</p>
+
+	</div>
+	<div>
+		<p [myHighlight]="color">Highlight me!</p>
+		<p [myHighlight]="color" [defaultColor]="'violet'">
+			Highlight me too!
+		</p>
+	</div>
+
+	<div>
+		<hero-form></hero-form>
+	</div>
+</main>
+
